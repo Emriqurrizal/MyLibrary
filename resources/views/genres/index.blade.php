@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<h2 class="mb-4">Genre List</h2>
+<h2 class="mb-4">Your Genre List</h2>
 
 <div class="table-responsive">
     <table class="table table-striped table-bordered w-75 mx-auto">
