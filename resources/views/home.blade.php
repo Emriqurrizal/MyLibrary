@@ -20,6 +20,21 @@
         <li><a href="/genres">📂 View All Genres</a></li>
     </ul>
 
+    <h3>📚 Recently Added Books</h3>
+    @if($recentBooks->isEmpty())
+        <p>You haven't added any books yet.</p>
+    @else
+        <ul>
+            @foreach($recentBooks as $book)
+                <li>
+                    <strong>{{ $book->title }}</strong>
+                    <br>
+                    <small>Added on {{ $book->created_at->format('d M Y') }}</small>
+                </li>
+            @endforeach
+        </ul>
+    @endif
+
     <br>
     <a href="/logout">🚪 Logout</a>
 </body>

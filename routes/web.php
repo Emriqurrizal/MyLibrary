@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\GenreController;
+use App\Http\Controllers\HomeController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -29,3 +30,5 @@ Route::middleware('auth')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::get('/genres', [GenreController::class, 'index'])->middleware('auth');
 });
+
+Route::get('/home', [HomeController::class, 'index'])->middleware('auth')->name('home');
