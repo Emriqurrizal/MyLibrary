@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>MyLibrary - Home</title>
-</head>
-<body>
+@extends('layouts.app')
+
+@section('content')
     <h1>Welcome to MyLibrary!</h1>
 
     <p>Hello, {{ Auth::user()->name }} 👋</p>
@@ -38,11 +35,10 @@
     <ul>
         <li><a href="{{ route('recommendations') }}">View Book Recommendations</a></li>
     </ul>
+
     <h3>❓ FAQ</h3>
     <ul>
         <li><a href="/faq">Frequently Asked Questions for MyLibrary</a></li>
     </ul>
-    <br>
-    <a href="/logout">🚪 Logout</a>
-</body>
-</html>
+
+@endsection

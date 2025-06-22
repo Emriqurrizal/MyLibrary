@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,3 +51,4 @@
     <p><a href="/books">Back to Book List</a></p>
 </body>
 </html>
+@endsection

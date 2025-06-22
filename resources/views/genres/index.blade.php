@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <h2>Genre List</h2>
 
 <table border="1" cellpadding="8">
@@ -10,3 +13,4 @@
         </tr>
     @endforeach
 </table>
+@endsection

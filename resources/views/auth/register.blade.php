@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Register</title>
-</head>
-<body>
+@extends('layouts.app')
+
+@section('content')
+<div class="container mt-5">
     <h2>Register</h2>
 
     @if ($errors->any())
-        <ul style="color: red;">
+        <ul class="text-danger">
             @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>
             @endforeach
@@ -16,21 +14,29 @@
 
     <form method="POST" action="/register">
         @csrf
-        <label>Name:</label><br>
-        <input type="text" name="name" value="{{ old('name') }}"><br><br>
+        <div class="mb-3">
+            <label>Name:</label>
+            <input type="text" name="name" class="form-control" value="{{ old('name') }}">
+        </div>
 
-        <label>Email:</label><br>
-        <input type="email" name="email" value="{{ old('email') }}"><br><br>
+        <div class="mb-3">
+            <label>Email:</label>
+            <input type="email" name="email" class="form-control" value="{{ old('email') }}">
+        </div>
 
-        <label>Password:</label><br>
-        <input type="password" name="password"><br><br>
+        <div class="mb-3">
+            <label>Password:</label>
+            <input type="password" name="password" class="form-control">
+        </div>
 
-        <label>Confirm Password:</label><br>
-        <input type="password" name="password_confirmation"><br><br>
+        <div class="mb-3">
+            <label>Confirm Password:</label>
+            <input type="password" name="password_confirmation" class="form-control">
+        </div>
 
-        <button type="submit">Register</button>
+        <button type="submit" class="btn btn-success">Register</button>
     </form>
 
-    <p>Already have an account? <a href="/login">Login here</a></p>
-</body>
-</html>
+    <p class="mt-3">Already have an account? <a href="/login">Login here</a></p>
+</div>
+@endsection
