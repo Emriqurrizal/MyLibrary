@@ -23,5 +23,5 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::resource('genres', GenreController::class);
+    Route::get('/genres', [GenreController::class, 'index'])->middleware('auth');
 });

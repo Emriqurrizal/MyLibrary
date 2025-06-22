@@ -7,7 +7,6 @@
     <h1>Welcome to MyLibrary!</h1>
 
     <p>Hello, {{ Auth::user()->name }} 👋</p>
-
     <p>You are logged in.</p>
 
     <h3>📚 My Book Collection</h3>
@@ -16,10 +15,9 @@
         <li><a href="/books/create">➕ Add a New Book</a></li>
     </ul>
 
-    <h3>🏷️ Genre Management</h3>
+    <h3>🏷️ Book Genres</h3>
     <ul>
         <li><a href="/genres">📂 View All Genres</a></li>
-        <li><a href="/genres/create">➕ Add a New Genre</a></li>
     </ul>
 
     <br>
