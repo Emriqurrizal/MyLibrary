@@ -1,1 +1,3 @@
-<p align="center"><img src="C:\xampp\htdocs\MyLibrary\resources\img" width="400"></a></p>
+<p align="center">
+  <img src="resources/img/MyLibrary.png" width="400" alt="MyLibrary Logo">
+</p>
