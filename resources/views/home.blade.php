@@ -34,7 +34,11 @@
             @endforeach
         </ul>
     @endif
-
+    
+    <h3>📚 Book Recommendations</h3>
+    <ul>
+        <li><a href="{{ route('recommendations') }}">View Book Recommendations</a></li>
+    </ul>
     <br>
     <a href="/logout">🚪 Logout</a>
 </body>
