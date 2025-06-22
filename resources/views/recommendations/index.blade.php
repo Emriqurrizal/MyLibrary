@@ -18,7 +18,7 @@
     </form>
 
     <table class="table">
-        <thead>
+        <thead class="table-dark">
             <tr>
                 <th>Title</th>
                 <th>Author</th>

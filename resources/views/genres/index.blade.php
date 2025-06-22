@@ -1,16 +1,26 @@
 @extends('layouts.app')
 
 @section('content')
-<h2>Genre List</h2>
+<h2 class="mb-4">Genre List</h2>
 
-<table border="1" cellpadding="8">
-    <tr>
-        <th>Name</th>
-    </tr>
-    @foreach ($genres as $genre)
-        <tr>
-            <td>{{ $genre->name }}</td>
-        </tr>
-    @endforeach
-</table>
+<div class="table-responsive">
+    <table class="table table-striped table-bordered w-50 mx-auto">
+        <thead class="table-dark">
+            <tr>
+                <th class="text-center">Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @forelse ($genres as $genre)
+                <tr>
+                    <td class="text-center">{{ $genre->name }}</td>
+                </tr>
+            @empty
+                <tr>
+                    <td class="text-center text-muted">No genres found.</td>
+                </tr>
+            @endforelse
+        </tbody>
+    </table>
+</div>
 @endsection

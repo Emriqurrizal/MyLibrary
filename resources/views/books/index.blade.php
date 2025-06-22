@@ -10,7 +10,7 @@
     </style>
 
     <div class="container">
-        <h2 class="mb-3">My Book Collection</h2>
+        <h2 class="mb-3">📚 My Book Collection</h2>
 
         @if (session('success'))
             <p>{{ session('success') }}</p>
@@ -22,7 +22,7 @@
         </form>
 
         <table class="table">
-            <thead>
+            <thead class="table-dark">
                 <tr>
                     <th>Title</th>
                     <th>Author</th>
@@ -43,12 +43,14 @@
                         <td>{{ ucfirst($book->status) }}</td>
                         <td>{{ $book->rating }}</td>
                         <td>
-                            <a href="/books/{{ $book->id }}/edit">Edit</a> |
-                            <form action="/books/{{ $book->id }}" method="POST" style="display:inline;">
-                                @csrf
-                                @method('DELETE')
-                                <button onclick="return confirm('Are you sure?')" style="background: none; border: none; padding: 0; color: inherit; cursor: pointer;">Delete</button>
-                            </form>
+                            <div class="d-flex gap-1">
+                                <a href="/books/{{ $book->id }}/edit" class="btn btn-sm btn-warning" style="min-width: 70px;">Edit</a>
+                                <form action="/books/{{ $book->id }}" method="POST" style="display:inline;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-sm btn-danger" style="min-width: 70px;" onclick="return confirm('Are you sure?')">Delete</button>
+                                </form>
+                            </div>
                         </td>
                     </tr>
                 @empty

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('author');
             $table->text('description')->nullable();
             $table->enum('status', ['read', 'unread'])->default('unread');
-            $table->tinyInteger('rating')->nullable(); // 1–5
+            $table->tinyInteger('rating')->nullable(); 
             $table->foreignId('genre_id')->constrained()->onDelete('cascade');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
