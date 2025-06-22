@@ -34,7 +34,7 @@
             <input type="password" name="password_confirmation" class="form-control">
         </div>
 
-        <button type="submit" class="btn btn-success">Register</button>
+        <button type="submit" class="btn btn-primary">Register</button>
     </form>
 
     <p class="mt-3">Already have an account? <a href="/login">Login here</a></p>

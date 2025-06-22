@@ -59,7 +59,6 @@
             </tbody>
         </table>
 
-        <a href="/books/create">➕ Add New Book</a><br><br>
-        <a href="/home">← Back to Home</a>
+        <a href="/books/create" class="btn btn-primary mt-3">Add New Book</a>
     </div>
 @endsection
