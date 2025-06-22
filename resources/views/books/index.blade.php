@@ -24,26 +24,26 @@
         <table class="table">
             <thead class="table-dark">
                 <tr>
-                    <th>Title</th>
-                    <th>Author</th>
-                    <th>Genre</th>
-                    <th>Description</th>
-                    <th>Status</th>
-                    <th>Rating</th>
-                    <th>Actions</th>
+                    <th class="align-middle text-center">Title</th>
+                    <th class="align-middle text-center">Author</th>
+                    <th class="align-middle text-center">Genre</th>
+                    <th class="align-middle text-center">Description</th>
+                    <th class="align-middle text-center">Status</th>
+                    <th class="align-middle text-center">Rating</th>
+                    <th class="align-middle text-center">Actions</th>
                 </tr>
             </thead>
             <tbody>
                 @forelse ($books as $book)
                     <tr>
-                        <td>{{ $book->title }}</td>
-                        <td>{{ $book->author }}</td>
-                        <td>{{ $book->genre->name ?? '-' }}</td>
-                        <td class="description">{{ $book->description }}</td>
-                        <td>{{ ucfirst($book->status) }}</td>
-                        <td>{{ $book->rating }}</td>
-                        <td>
-                            <div class="d-flex gap-1">
+                        <td class="align-middle text-center">{{ $book->title }}</td>
+                        <td class="align-middle text-center">{{ $book->author }}</td>
+                        <td class="align-middle text-center">{{ $book->genre->name ?? '-' }}</td>
+                        <td class="align-middle description">{{ $book->description }}</td>
+                        <td class="align-middle text-center">{{ ucfirst($book->status) }}</td>
+                        <td class="align-middle text-center">{{ $book->rating }}</td>
+                        <td class="align-middle text-center">
+                            <div class="d-flex gap-1 justify-content-center">
                                 <a href="/books/{{ $book->id }}/edit" class="btn btn-sm btn-warning" style="min-width: 70px;">Edit</a>
                                 <form action="/books/{{ $book->id }}" method="POST" style="display:inline;">
                                     @csrf
@@ -55,7 +55,7 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="7">No books found.</td>
+                        <td colspan="7" class="align-middle text-center">No books found.</td>
                     </tr>
                 @endforelse
             </tbody>
