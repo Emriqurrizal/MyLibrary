@@ -7,7 +7,6 @@
     <h1>Welcome to MyLibrary!</h1>
 
     <p>Hello, {{ Auth::user()->name }} 👋</p>
-    <p>You are logged in.</p>
 
     <h3>📚 My Book Collection</h3>
     <ul>
@@ -34,10 +33,14 @@
             @endforeach
         </ul>
     @endif
-    
+
     <h3>📚 Book Recommendations</h3>
     <ul>
         <li><a href="{{ route('recommendations') }}">View Book Recommendations</a></li>
+    </ul>
+    <h3>❓ FAQ</h3>
+    <ul>
+        <li><a href="/faq">Frequently Asked Questions for MyLibrary</a></li>
     </ul>
     <br>
     <a href="/logout">🚪 Logout</a>

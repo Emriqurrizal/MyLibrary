@@ -35,3 +35,5 @@ Route::middleware('auth')->group(function () {
 Route::get('/home', [HomeController::class, 'index'])->middleware('auth')->name('home');
 
 Route::get('/recommendations', [RecommendationController::class, 'index'])->name('recommendations');
+
+Route::view('/faq', 'faq')->name('faq');
