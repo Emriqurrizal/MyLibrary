@@ -9,9 +9,17 @@ use Illuminate\Support\Facades\Auth;
 
 class BookController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $books = Book::where('user_id', Auth::id())->get();
+        $query = Book::where('user_id', auth()->id());
+
+        if ($request->has('search')) {
+            $search = $request->input('search');
+            $query->where('title', 'like', '%' . $search . '%');
+        }
+
+        $books = $query->latest()->get();
+
         return view('books.index', compact('books'));
     }
 

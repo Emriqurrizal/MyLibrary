@@ -16,8 +16,11 @@
     @if (session('success'))
         <p style="color: green;">{{ session('success') }}</p>
     @endif
-
-    <a href="/books/create">➕ Add New Book</a><br><br>
+    <form method="GET" action="{{ route('books.index') }}" class="mb-3 d-flex">
+        <input type="text" name="search" value="{{ request('search') }}" class="form-control me-2" placeholder="Search by title...">
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+    <br>
 
     <table border="1" cellpadding="8">
         <tr>
@@ -48,6 +51,8 @@
             </tr>
         @endforeach
     </table>
+    <br>
+    <a href="/books/create">➕ Add New Book</a><br><br>
     <br>
     <a href="/home">← Back to Home</a>
 </body>
