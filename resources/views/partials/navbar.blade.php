@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{{ url('/') }}">📚 MyLibrary</a>
+        <a class="navbar-brand">📚 MyLibrary</a>
 
         {{-- Hide menu toggle + nav items on landing page --}}
         @if (!Request::is('/'))

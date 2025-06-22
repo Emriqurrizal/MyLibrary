@@ -20,19 +20,19 @@
     <table class="table">
         <thead class="table-dark">
             <tr>
-                <th>Title</th>
-                <th>Author</th>
-                <th>Genre</th>
-                <th>Description</th>
+                <th class="text-center">Title</th>
+                <th class="text-center">Author</th>
+                <th class="text-center">Genre</th>
+                <th class="text-center">Description</th>
             </tr>
         </thead>
         <tbody>
             @forelse($recommendations as $book)
                 <tr>
-                    <td>{{ $book->title }}</td>
-                    <td>{{ $book->author }}</td>
-                    <td>{{ $book->genre }}</td>
-                    <td>{{ $book->description }}</td>
+                    <td class="text-center">{{ $book->title }}</td>
+                    <td class="text-center">{{ $book->author }}</td>
+                    <td class="text-center">{{ $book->genre }}</td>
+                    <td class="text-center">{{ $book->description }}</td>
                 </tr>
             @empty
                 <tr>
