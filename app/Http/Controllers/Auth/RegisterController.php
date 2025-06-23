@@ -29,7 +29,7 @@ class RegisterController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        Auth::login($user); // Auto-login after register
+        Auth::login($user); 
         return redirect('/home');
     }
 }

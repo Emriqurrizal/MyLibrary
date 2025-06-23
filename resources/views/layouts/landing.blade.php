@@ -21,9 +21,7 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
-        <div class="container">
-            <a class="navbar-brand" href="{{ url('/') }}">📚 MyLibrary</a>
-        </div>
+        <a class="navbar-brand ms-3" href="{{ url('/') }}">📚 MyLibrary</a>
     </nav>
 
     <div class="container mt-4 content-wrapper">
