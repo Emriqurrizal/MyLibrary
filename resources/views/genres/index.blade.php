@@ -17,12 +17,12 @@
             </tr>
         </thead>
         <tbody>
-            @forelse ($genres as $genre)
+            @foreach ($genres as $genre)
                 <tr>
                     <td class="text-center">{{ $genre->name }}</td>
                     <td class="text-center">{{ $genre->books_count }}</td>
                 </tr>
-            @endforelse
+            @endforeach
         </tbody>
     </table>
 </div>

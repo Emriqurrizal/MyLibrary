@@ -27,18 +27,14 @@
                 </tr>
             </thead>
             <tbody>
-                @forelse($recommendations as $book)
+                @foreach($recommendations as $book)
                     <tr>
                         <td class="text-center">{{ $book->title }}</td>
                         <td class="text-center">{{ $book->author }}</td>
                         <td class="text-center">{{ $book->genre }}</td>
                         <td class="text-center">{{ $book->description }}</td>
                     </tr>
-                @empty
-                    <tr>
-                        <td colspan="4" class="text-center">No recommendations found for this genre.</td>
-                    </tr>
-                @endforelse
+                @endforeach
             </tbody>
         </table>
     </div>
