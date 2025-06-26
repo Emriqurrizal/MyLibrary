@@ -22,10 +22,6 @@
                     <td class="text-center">{{ $genre->name }}</td>
                     <td class="text-center">{{ $genre->books_count }}</td>
                 </tr>
-            @empty
-                <tr>
-                    <td colspan="2" class="text-center text-muted">No genres found.</td>
-                </tr>
             @endforelse
         </tbody>
     </table>
