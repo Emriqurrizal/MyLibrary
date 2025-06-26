@@ -25,7 +25,7 @@
 </style>
 
 <div class="py-4" style="min-height: 90vh;">
-    <div class="mb-5 text-center">
+    <div class="mb-4 text-center">
         <h1 style="font-size:2.5rem;">Welcome to <span class="fw-normal">📚MyLibrary</span></h1>
         <p class="fs-5 text-muted mb-1">Hello, <span class="fw-semibold">{{ Auth::user()->name }}</span> 👋</p>
         <p class="text-secondary">Manage your books, genres, and more with ease.</p>
