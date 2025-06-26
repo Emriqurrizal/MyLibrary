@@ -19,7 +19,6 @@ class RecommendationController extends Controller
 
         $recommendations = $query->get();
 
-        // Get distinct genres from the recommendations
         $genres = Recommendation::select('genre')->distinct()->orderBy('genre')->pluck('genre');
 
         return view('recommendations.index', compact('recommendations', 'genres', 'genre'));
