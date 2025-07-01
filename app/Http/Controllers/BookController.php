@@ -38,8 +38,9 @@ class BookController extends Controller
             'genre_id' => 'required|exists:genres,id',
             'status' => 'required|in:read,unread',
             'rating' => 'nullable|integer|min:1|max:5',
+            'total_pages' => 'nullable|integer|min:1',
+            'last_page_read' => 'nullable|integer|min:0',
         ]);
-
         Book::create([
             'user_id' => Auth::id(),
             'title' => $request->title,
@@ -47,6 +48,8 @@ class BookController extends Controller
             'description' => $request->description,
             'genre_id' => $request->genre_id,
             'status' => $request->status,
+            'total_pages' => $request->total_pages,
+            'last_page_read' => $request->last_page_read,
             'rating' => $request->rating,
         ]);
 
@@ -76,9 +79,20 @@ class BookController extends Controller
             'genre_id' => 'required|exists:genres,id',
             'status' => 'required|in:read,unread',
             'rating' => 'nullable|integer|min:1|max:5',
+            'total_pages' => 'nullable|integer|min:1',
+            'last_page_read' => 'nullable|integer|min:0',
         ]);
 
-        $book->update($request->all());
+        $book->update([
+            'title' => $request->title,
+            'author' => $request->author,
+            'description' => $request->description,
+            'genre_id' => $request->genre_id,
+            'status' => $request->status,
+            'rating' => $request->rating,
+            'total_pages' => $request->total_pages,
+            'last_page_read' => $request->last_page_read,
+        ]);
 
         return redirect('/books')->with('success', 'Book updated!');
     }
@@ -91,6 +105,18 @@ class BookController extends Controller
 
         $book->delete();
         return redirect('/books')->with('success', 'Book deleted.');
+    }
+
+    public function updateProgress(Request $request, Book $book)
+    {
+        $request->validate([
+            'last_page_read' => 'required|integer|min:0|max:' . $book->total_pages,
+        ]);
+
+        $book->last_page_read = $request->last_page_read;
+        $book->save();
+
+        return redirect()->back()->with('success', 'Progress updated!');
     }
 }
 

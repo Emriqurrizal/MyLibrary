@@ -41,7 +41,24 @@
                             <td class="align-middle text-center">{{ $book->author }}</td>
                             <td class="align-middle text-center">{{ $book->genre->name ?? '-' }}</td>
                             <td class="align-middle description">{{ $book->description }}</td>
-                            <td class="align-middle text-center">{{ ucfirst($book->status) }}</td>
+                            <td class="align-middle text-center">
+                                {{ ucfirst($book->status) }}
+
+                                @if($book->total_pages)
+                                    <div class="progress mt-1" style="height: 12px;">
+                                        <div class="progress-bar bg-success"
+                                            style="width: {{ $book->reading_progress }}%;"
+                                            role="progressbar"
+                                            aria-valuenow="{{ $book->reading_progress }}"
+                                            aria-valuemin="0"
+                                            aria-valuemax="100">
+                                        </div>
+                                    </div>
+                                    <small class="text-muted">{{ $book->last_page_read }} / {{ $book->total_pages }} pages</small>
+                                @else
+                                    <div><small class="text-muted">No page info</small></div>
+                                @endif
+                            </td>
                             <td class="align-middle text-center">{{ $book->rating }}</td>
                             <td class="align-middle text-center">
                                 <div class="d-flex gap-1 justify-content-center">

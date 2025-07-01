@@ -46,3 +46,5 @@ Route::post('/logout', function (Request $request) {
     $request->session()->regenerateToken();
     return redirect('/login');
 })->name('logout');
+
+Route::post('/books/{book}/progress', [BookController::class, 'updateProgress'])->name('books.updateProgress');

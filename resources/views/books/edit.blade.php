@@ -53,6 +53,17 @@
         </div>
 
         <div class="mb-3">
+            <label for="total_pages" class="form-label">Total Pages</label>
+            <input type="number" class="form-control" id="total_pages" name="total_pages" value="{{ old('total_pages', $book->total_pages) }}">
+        </div>
+
+        <div class="mb-3">
+            <label for="last_page_read" class="form-label">Last Page Read</label>
+            <input type="number" class="form-control" id="last_page_read" name="last_page_read" value="{{ old('last_page_read', $book->last_page_read) }}">
+        </div>
+
+
+        <div class="mb-3">
             <label class="form-label">Rating (1-5):</label>
             <input type="number" name="rating" min="1" max="5" class="form-control" value="{{ old('rating', $book->rating) }}">
         </div>
