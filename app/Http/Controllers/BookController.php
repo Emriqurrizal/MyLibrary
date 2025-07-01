@@ -106,17 +106,5 @@ class BookController extends Controller
         $book->delete();
         return redirect('/books')->with('success', 'Book deleted.');
     }
-
-    public function updateProgress(Request $request, Book $book)
-    {
-        $request->validate([
-            'last_page_read' => 'required|integer|min:0|max:' . $book->total_pages,
-        ]);
-
-        $book->last_page_read = $request->last_page_read;
-        $book->save();
-
-        return redirect()->back()->with('success', 'Progress updated!');
-    }
 }
 
